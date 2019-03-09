@@ -23,15 +23,15 @@ esac
 quest 'Записать скрипт? (y/n)'
 message 'Запись скрипта запуска...'
 odin='$1'
-cat >/data/data/com.termux/files/usr/bin/deb<<-EOM
+cat >/data/data/com.termux/files/usr/bin/bb<<-EOM
 function message {
 echo "[tvs-m] message:"  $odin ; }
 
 clear
 clear
 clear
-toilet debian --gay
-toilet linux --gay
+toilet Back --gay
+toilet Box --gay
 message 'startscript by Valerik 228 4pda'
 if export PROOT_NO_SECCOMP=1;
 then echo '[OK] fixmandb_android8.0';
@@ -43,7 +43,7 @@ then echo '[OK] sshd(1)';
 else echo '[ERROR] sshd(1)';
 fi
 message 'Запуск debian...'
-if ~/start-debian.sh;
+if ~/start-backbox.sh;
 then echo;
 else echo '[ERROR] debian(main)';
 fi
@@ -60,9 +60,8 @@ toilet v2e
 echo by Valerik_228/tvsclass
 echo
 echo Usage:
-echo deb - start debian
-echo kali - start kali
-echo ubnt - start ubuntu
+echo bb - start backbox
+
 
 EOM
 
@@ -76,3 +75,6 @@ EOM
 chmod +x /data/data/com.termux/files/usr/bin/fscfg
 
 fscfg
+
+cd ~/backbox-fs/root/
+git clone https://github.com/tvsclass/tvsgui8
