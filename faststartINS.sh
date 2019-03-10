@@ -42,10 +42,10 @@ if sshd;
 then echo '[OK] sshd(1)';
 else echo '[ERROR] sshd(1)';
 fi
-message 'Запуск debian...'
+message 'Запуск backbox...'
 if ~/start-backbox.sh;
 then echo;
-else echo '[ERROR] debian(main)';
+else echo '[!] backbox завершила сеанс';
 fi
 
 EOM
